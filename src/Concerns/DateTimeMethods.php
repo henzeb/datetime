@@ -2,6 +2,7 @@
 
 namespace Henzeb\DateTime\Concerns;
 
+use DateTime;
 use DateTimeZone;
 use DateTimeInterface;
 
@@ -28,7 +29,7 @@ trait DateTimeMethods
         }
 
         if (is_string($testNow)) {
-            static::$testNow = $testNow;
+            $testNow = new DateTime($testNow);
         }
 
         if ($testNow instanceof DateTimeInterface) {

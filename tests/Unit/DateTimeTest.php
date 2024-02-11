@@ -71,4 +71,13 @@ class DateTimeTest extends TestCase
             $actual->format('Y-m-d H:i'),
         );
     }
+
+    public function testSetTestNowShouldAcceptNow(): void
+    {
+        DateTime::setTestNow('now');
+        $expectedNow = DateTime::now();
+        sleep(1);
+        $this->assertSame($expectedNow->getTimestamp(), DateTime::now()->getTimestamp());
+
+    }
 }

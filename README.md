@@ -47,6 +47,7 @@ When passing `null`, new DateTime objects will use current date/time again.
 
 ```php
 use Henzeb\DateTime\DateTime;
+DateTime::setTestNow('now'); // freezes time
 DateTime::setTestNow('1999-01-01');
 DateTime::setTestNow(new DateTime('1999-01-01'));
 ``` 
